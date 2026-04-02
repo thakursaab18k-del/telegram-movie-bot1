@@ -7,7 +7,7 @@ from flask import Flask
 
 
 # 🔐 ENV ONLY (no fallback token)
-TOKEN = os.getenv("TOKEN")
+TOKEN = os.getenv("8145649130:AAE1MF8kgs7dieV6bV4rbXdfE6qLnvOVVi8")
 API_KEY = os.getenv("API_KEY") or "46111cc1"
 
 cache = {}

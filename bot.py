@@ -113,33 +113,6 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
     await send_movie(update, movie_name)
 
-# ================== 🚀 RUN BOT ==================
-
-app = ApplicationBuilder().token(TOKEN).build()
-
-app.add_handler(CommandHandler("start", start))
-app.add_handler(CommandHandler("movie", movie))
-app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
-
-print("Bot running 🚀")
-
-app.run_polling()
-API_KEY = os.getenv("API_KEY") or "46111cc1"
-
-cache = {}
-
-# ================== 🌐 DUMMY WEB SERVER ==================
-web_app = Flask(name)
-
-@web_app.route("/")
-def home():
-    return "Bot is running!"
-
-def run_web():
-    port = int(os.environ.get("PORT", 10000))
-    web_app.run(host="0.0.0.0", port=port)
-
-threading.Thread(target=run_web).start()
 
 # ================== 🤖 BOT CODE ==================
 
